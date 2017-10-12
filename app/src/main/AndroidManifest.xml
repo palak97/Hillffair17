@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.nith.appteam.hillffair17">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:name=".Utils.MyApplication"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyByIUspPrtzSN1TGWXi2zXn7zaeTGr6850" />
+
+        <activity
+            android:name=".Activities.SplashActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- Note: @octacode- Done to suppress high resolution warning during publishing for phones like S8 -->
+            <meta-data
+                android:name="android.max_aspect"
+                android:value="2.1" />
+        </activity>
+        <activity
+            android:name=".Activities.MapActivity"
+            android:exported="true"
+            android:parentActivityName=".Activities.HomeActivity" />
+        <activity
+            android:name=".Activities.ContributorsActivity"
+            android:parentActivityName=".Activities.HomeActivity" />
+        <activity
+            android:name=".Activities.SponsorActivity"
+            android:parentActivityName=".Activities.HomeActivity" />
+        <activity
+            android:name=".Activities.CoreTeamActivity"
+            android:parentActivityName=".Activities.HomeActivity" />
+        <activity
+            android:name=".Activities.HomeActivity"
+            android:label="Hill&apos;ffair 2k17"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.IntroActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <activity
+            android:name=".Activities.AboutActivity"
+            android:exported="true"
+            android:parentActivityName=".Activities.HomeActivity"></activity>
+
+
+        <activity
+            android:name=".Activities.EventActivity"
+            android:exported="true"
+            android:parentActivityName=".Activities.HomeActivity"></activity>
+
+        <activity
+            android:name=".Activities.ClubActivity"
+            android:exported="true"
+            android:parentActivityName=".Activities.EventActivity">
+        </activity>
+
+        <activity android:name=".Activities.BattleDayActivity"
+            android:parentActivityName=".Activities.HomeActivity"
+            android:exported="true">
+        </activity>
+
+    </application>
+
+</manifest>
